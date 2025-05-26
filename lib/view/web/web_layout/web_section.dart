@@ -12,19 +12,22 @@ class WebLayout extends StatelessWidget {
       children: [
         WebAppBar(),
         Expanded(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                flex: 3,
-                child: MainContent(isWeb: true),
-              ),
-              SizedBox(width: 24),
-              Expanded(
-                flex: 1,
-                child: ProfileSidebar(isWeb: true),
-              ),
-            ],
+          child: Padding(
+            padding: EdgeInsets.only(left: 40.0, right: 40),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: MainContent(isWeb: true),
+                ),
+                SizedBox(width: 24),
+                Expanded(
+                  flex: 1,
+                  child: ProfileSidebar(isWeb: true),
+                ),
+              ],
+            ),
           ),
         ),
       ],

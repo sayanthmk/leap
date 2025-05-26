@@ -11,7 +11,6 @@ class LeapModel {
     required this.body,
   });
 
-  // Factory constructor to create a Post from JSON
   factory LeapModel.fromJson(Map<String, dynamic> json) {
     return LeapModel(
       userId: json['userId'],
@@ -21,13 +20,13 @@ class LeapModel {
     );
   }
 
-  // Convert a Post object to JSON
-  Map<String, dynamic> toJson() {
-    return {
-      'userId': userId,
-      'id': id,
-      'title': title,
-      'body': body,
-    };
-  }
+  // // Convert a Post object to JSON
+  // Map<String, dynamic> toJson() {
+  //   return {
+  //     'userId': userId,
+  //     'id': id,
+  //     'title': title,
+  //     'body': body,
+  //   };
+  // }
 }

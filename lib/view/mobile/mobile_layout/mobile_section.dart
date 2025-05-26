@@ -4,7 +4,7 @@ import 'package:leap/view/mobile/appbar/mobile_appbar.dart';
 import 'package:leap/view/web/profile/profile.dart';
 
 class MobileLayout extends StatelessWidget {
-  const MobileLayout({Key? key}) : super(key: key);
+  const MobileLayout({super.key});
 
   @override
   Widget build(BuildContext context) {

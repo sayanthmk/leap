@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:leap/view/home/home_page.dart';
 import 'package:leap/view/common/logo.dart';
 
 class MobileAppBar extends StatelessWidget {
-  const MobileAppBar({Key? key}) : super(key: key);
+  const MobileAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {

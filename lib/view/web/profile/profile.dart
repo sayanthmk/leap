@@ -8,7 +8,7 @@ class ProfileSidebar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 330,
+      height: 340,
       margin:
           isWeb ? const EdgeInsets.only(top: 24, right: 24) : EdgeInsets.zero,
       decoration: BoxDecoration(
@@ -82,7 +82,7 @@ class ProfileAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      radius: isWeb ? 40 : 32,
+      radius: isWeb ? 34 : 32,
       backgroundImage: const NetworkImage('https://via.placeholder.com/80'),
     );
   }
@@ -97,6 +97,8 @@ class ProfileInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'John Wick Paul II',
@@ -158,7 +160,7 @@ class MobileProfileButtons extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          width: double.infinity,
+          // width: double.infinity,
           child: TextButton(
             onPressed: () {},
             child: const Text(
@@ -168,7 +170,7 @@ class MobileProfileButtons extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: double.infinity,
+          // width: double.infinity,
           child: TextButton(
             onPressed: () {},
             child: const Text(
