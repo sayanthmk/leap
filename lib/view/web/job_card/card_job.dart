@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:leap/model/model.dart';
 import 'package:leap/view/web/job_card/job_section.dart';
 
 class JobCard extends StatelessWidget {
   final bool isWeb;
+  final LeapModel? job;
 
-  const JobCard({super.key, required this.isWeb});
+  const JobCard({
+    super.key,
+    required this.isWeb,
+    this.job,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,75 +31,13 @@ class JobCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          JobCardHeader(isWeb: isWeb),
+          JobCardHeader(isWeb: isWeb, job: job),
           const SizedBox(height: 16),
-          isWeb ? const WebJobDetails() : const MobileJobDetails(),
+          isWeb ? WebJobDetails(job: job) : MobileJobDetails(job: job),
           const SizedBox(height: 16),
-          JobDescription(isWeb: isWeb),
+          JobDescription(isWeb: isWeb, job: job),
         ],
       ),
-    );
-  }
-}
-
-class JobCardHeader extends StatelessWidget {
-  final bool isWeb;
-
-  const JobCardHeader({super.key, required this.isWeb});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          width: isWeb ? 64 : 48,
-          height: isWeb ? 64 : 48,
-          decoration: BoxDecoration(
-            color: Colors.grey[200],
-            borderRadius: BorderRadius.circular(8),
-          ),
-        ),
-        const SizedBox(width: 16),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Text(
-                      'US IT Technical Recruiter',
-                      style: TextStyle(
-                        fontSize: isWeb ? 20 : 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.bookmark_border,
-                            color: Colors.grey),
-                      ),
-                      const Text('Save')
-                    ],
-                  ),
-                ],
-              ),
-              Text(
-                'Ora Apps Inc',
-                style: TextStyle(
-                  fontSize: isWeb ? 16 : 14,
-                  color: Colors.grey,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
     );
   }
 }

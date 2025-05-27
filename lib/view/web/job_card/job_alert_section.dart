@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leap/constants/color.dart';
 import 'package:leap/view/web/job_card/card_job.dart';
 
 class JobAlertsSection extends StatelessWidget {
@@ -27,10 +28,10 @@ class JobAlertsSection extends StatelessWidget {
               child: Text(
                 'MANAGE ALERTS',
                 style: TextStyle(
-                  color: const Color(0xFF6366F1),
-                  fontWeight: FontWeight.w600,
-                  fontSize: isWeb ? 14 : 12,
-                ),
+                    color: LeapColors.primaryblue,
+                    fontWeight: FontWeight.w600,
+                    fontSize: isWeb ? 14 : 12,
+                    decoration: TextDecoration.underline),
               ),
             ),
           ],

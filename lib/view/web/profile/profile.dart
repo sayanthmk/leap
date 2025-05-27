@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:leap/constants/color.dart';
+import 'package:leap/view/web/profile/action_button.dart';
 
 class ProfileSidebar extends StatelessWidget {
   final bool isWeb;
@@ -8,7 +10,7 @@ class ProfileSidebar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 340,
+      height: 370,
       margin:
           isWeb ? const EdgeInsets.only(top: 24, right: 24) : EdgeInsets.zero,
       decoration: BoxDecoration(
@@ -29,7 +31,7 @@ class ProfileSidebar extends StatelessWidget {
             // Red section (top)
             Container(
               padding: EdgeInsets.all(isWeb ? 24 : 16),
-              color: Colors.grey,
+              color: Colors.grey.withOpacity(0.1),
               child: Column(
                 children: [
                   Row(
@@ -40,7 +42,7 @@ class ProfileSidebar extends StatelessWidget {
                       Column(
                         children: [
                           ProfileInfo(isWeb: isWeb),
-                          // const SizedBox(height: 16),
+                          const SizedBox(height: 5),
                           isWeb
                               ? const WebProfileButtons()
                               : const MobileProfileButtons(),
@@ -48,8 +50,6 @@ class ProfileSidebar extends StatelessWidget {
                       )
                     ],
                   ),
-
-                  // const SizedBox(height: 16),
                 ],
               ),
             ),
@@ -83,7 +83,7 @@ class ProfileAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: isWeb ? 34 : 32,
-      backgroundImage: const NetworkImage('https://via.placeholder.com/80'),
+      backgroundImage: const AssetImage('asset/lady.jpg'),
     );
   }
 }
@@ -137,14 +137,24 @@ class WebProfileButtons extends StatelessWidget {
           onPressed: () {},
           child: const Text(
             'Edit Profile',
-            style: TextStyle(color: Color(0xFF6366F1)),
+            style: TextStyle(
+              color: LeapColors.primaryblue,
+              decoration: TextDecoration.underline,
+              decorationColor: LeapColors.primaryblue,
+              decorationThickness: 1.5,
+            ),
           ),
         ),
         TextButton(
           onPressed: () {},
           child: const Text(
             'Update Resume',
-            style: TextStyle(color: Color(0xFF6366F1)),
+            style: TextStyle(
+              color: LeapColors.primaryblue,
+              decoration: TextDecoration.underline,
+              decorationColor: LeapColors.primaryblue,
+              decorationThickness: 1.5,
+            ),
           ),
         ),
       ],
@@ -160,22 +170,28 @@ class MobileProfileButtons extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          // width: double.infinity,
           child: TextButton(
             onPressed: () {},
             child: const Text(
               'Edit Profile',
-              style: TextStyle(color: Color(0xFF6366F1)),
+              style: TextStyle(
+                color: LeapColors.primaryblue,
+                decoration: TextDecoration.underline,
+              ),
             ),
           ),
         ),
         SizedBox(
-          // width: double.infinity,
           child: TextButton(
             onPressed: () {},
             child: const Text(
               'Update Resume',
-              style: TextStyle(color: Color(0xFF6366F1)),
+              style: TextStyle(
+                color: LeapColors.primaryblue,
+                decoration: TextDecoration.underline,
+                decorationColor: LeapColors.primaryblue,
+                decorationThickness: 1.5,
+              ),
             ),
           ),
         ),
@@ -231,70 +247,6 @@ class ProfileCompletion extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-// Action Buttons Widget
-class ActionButtons extends StatelessWidget {
-  final bool isWeb;
-
-  const ActionButtons({super.key, required this.isWeb});
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWeb) {
-      return const Row(
-        children: [
-          Expanded(child: ActionButton(text: 'Applied\nJobs')),
-          SizedBox(width: 12),
-          Expanded(child: ActionButton(text: 'Custom\nJob Alerts')),
-        ],
-      );
-    } else {
-      return const Column(
-        children: [
-          SizedBox(
-            width: double.infinity,
-            child: ActionButton(text: 'Applied Jobs'),
-          ),
-          SizedBox(height: 8),
-          SizedBox(
-            width: double.infinity,
-            child: ActionButton(text: 'Custom Job Alerts'),
-          ),
-        ],
-      );
-    }
-  }
-}
-
-// Action Button Widget
-class ActionButton extends StatelessWidget {
-  final String text;
-
-  const ActionButton({super.key, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () {},
-      style: OutlinedButton.styleFrom(
-        side: const BorderSide(color: Color(0xFF6366F1)),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
-        padding: const EdgeInsets.symmetric(vertical: 12),
-      ),
-      child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: const TextStyle(
-          color: Color(0xFF6366F1),
-          fontWeight: FontWeight.w600,
-          fontSize: 12,
-        ),
-      ),
     );
   }
 }

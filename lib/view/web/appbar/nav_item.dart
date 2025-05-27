@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leap/constants/color.dart';
 
 class NavItem extends StatelessWidget {
   final String title;
@@ -15,9 +16,9 @@ class NavItem extends StatelessWidget {
     return Text(
       title,
       style: TextStyle(
-        color: isActive ? const Color(0xFF6366F1) : Colors.grey[600],
+        color: isActive ? LeapColors.primaryblue : LeapColors.black,
         decoration: isActive ? TextDecoration.underline : TextDecoration.none,
-        fontWeight: isActive ? FontWeight.w600 : FontWeight.normal,
+        fontWeight: isActive ? FontWeight.w600 : FontWeight.w600,
         fontSize: 16,
       ),
     );

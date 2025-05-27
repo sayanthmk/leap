@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:http/http.dart' as http;
 import 'package:leap/model/model.dart';
 
@@ -6,7 +7,7 @@ class ApiService {
   static Future<List<LeapModel>> fetchPosts() async {
     final response =
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
-
+    log(response.statusCode.toString());
     switch (response.statusCode) {
       case 200:
         List data = jsonDecode(response.body);

@@ -22,7 +22,7 @@ class MobileAppBar extends StatelessWidget {
               ),
               const CircleAvatar(
                 radius: 16,
-                backgroundImage: NetworkImage('https://via.placeholder.com/32'),
+                backgroundImage: AssetImage('asset/lady.jpg'),
               ),
             ],
           ),

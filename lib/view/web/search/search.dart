@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leap/constants/color.dart';
 
 class SearchSection extends StatelessWidget {
   final bool isWeb;
@@ -26,7 +27,6 @@ class SearchSection extends StatelessWidget {
   }
 }
 
-// Web Search Row Widget
 class WebSearchRow extends StatelessWidget {
   const WebSearchRow({super.key});
 
@@ -51,7 +51,6 @@ class WebSearchRow extends StatelessWidget {
   }
 }
 
-// Mobile Search Column Widget
 class MobileSearchColumn extends StatelessWidget {
   const MobileSearchColumn({super.key});
 
@@ -72,7 +71,6 @@ class MobileSearchColumn extends StatelessWidget {
   }
 }
 
-// Search Field Widget
 class SearchField extends StatelessWidget {
   final String hint;
   final IconData icon;
@@ -88,6 +86,10 @@ class SearchField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: hint,
+        hintStyle: const TextStyle(
+          color: Colors.black,
+          fontSize: 14,
+        ),
         suffixIcon: Icon(icon, color: Colors.grey),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
@@ -99,14 +101,14 @@ class SearchField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide: const BorderSide(color: Color(0xFF6366F1)),
+          borderSide: const BorderSide(color: LeapColors.primaryblue),
         ),
       ),
     );
   }
 }
 
-// Search Button Widget
+// Search Button
 class SearchButton extends StatelessWidget {
   const SearchButton({super.key});
 
@@ -115,7 +117,7 @@ class SearchButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFF6366F1),
+        backgroundColor: LeapColors.primaryblue,
         padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),

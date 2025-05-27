@@ -12,12 +12,12 @@ class ProfileHeader extends StatelessWidget {
         SizedBox(width: 16),
         CircleAvatar(
           radius: 20,
-          backgroundImage: NetworkImage('https://via.placeholder.com/40'),
+          backgroundImage: AssetImage('asset/lady.jpg'),
         ),
         SizedBox(width: 8),
         Text(
           'Hello, John Wick',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
         ),
       ],
     );

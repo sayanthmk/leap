@@ -4,10 +4,6 @@ import 'package:leap/services/api_services.dart';
 
 class ConnectivityService {
   static Future<List<LeapModel>> getAllPosts() async {
-    return await syncPosts();
-  }
-
-  static Future<List<LeapModel>> syncPosts() async {
     final connectivity = await Connectivity().checkConnectivity();
 
     if (connectivity != ConnectivityResult.none) {

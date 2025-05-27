@@ -19,14 +19,4 @@ class LeapModel {
       body: json['body'],
     );
   }
-
-  // // Convert a Post object to JSON
-  // Map<String, dynamic> toJson() {
-  //   return {
-  //     'userId': userId,
-  //     'id': id,
-  //     'title': title,
-  //     'body': body,
-  //   };
-  // }
 }

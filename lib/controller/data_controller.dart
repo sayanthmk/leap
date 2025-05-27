@@ -14,8 +14,9 @@ class PostProvider with ChangeNotifier {
     notifyListeners();
 
     try {
-      await ConnectivityService.getAllPosts();
-      // _posts = await SyncService.getLocalPosts();
+      final fetchedPosts = await ConnectivityService.getAllPosts();
+      _posts.clear();
+      _posts.addAll(fetchedPosts);
     } catch (e) {
       debugPrint('Error loading posts: $e');
     } finally {
